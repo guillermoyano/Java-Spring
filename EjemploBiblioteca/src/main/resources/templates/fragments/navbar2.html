@@ -1,0 +1,44 @@
+<nav>
+    <ul class="main">
+<li>
+   <a th:if="${session.usuariosession != null}" href="/">Inicio</a> 
+</li>
+
+      <li>
+        <a th:if="${session.usuariosession != null}" href="#">Libro</a>
+        <ul class="drop menu1">
+          <li><a sec:authorize="hasRole('ADMIN')" href="/libro/registrar">Cargar</a></li>
+          <li><a th:if="${session.usuariosession != null}" href="/libro/lista">Ver</a></li>
+          <li><a th:if="${session.usuariosession != null}" href="#">Modificar</a></li>
+          <li><a th:if="${session.usuariosession != null}" href="#">Eliminar</a></li>
+        </ul>
+      </li>
+      <li><a th:if="${session.usuariosession != null}" href="#">Autor</a>
+        <ul class="drop menu2">
+          <li><a th:if="${session.usuariosession != null}" sec:authorize="hasRole('ADMIN')" href="/autor/registrar">Cargar</a></li>
+          <li><a th:if="${session.usuariosession != null}" href="/autor/lista">Ver</a></li>
+          <li><a th:if="${session.usuariosession != null}" href="#">Modificar</a></li>
+          <li><a th:if="${session.usuariosession != null}" href="#">Eliminar</a></li>
+        </ul>
+      </li>
+      <li><a th:if="${session.usuariosession != null}" href="#">Editorial</a>
+        <ul class="drop menu3">
+          <li><a th:if="${session.usuariosession != null}" sec:authorize="hasRole('ADMIN')" href="/editorial/registrar">Cargar</a></li>
+          <li><a th:if="${session.usuariosession != null}" href="/editorial/lista">Ver</a></li>
+          <li><a th:if="${session.usuariosession != null}" href="#">Modificar</a></li>
+          <li><a th:if="${session.usuariosession != null}" href="#">Eliminar</a></li>
+        </ul>
+      </li>
+      <li><a th:if="${session.usuariosession != null}" href="#">Perfil</a>
+        <ul class="drop menu4">
+          <li><a th:if="${session.usuariosession != null}" th:href="@{/perfil}">Editar</a></li>
+          <li><a th:if="${session.usuariosession != null}" sec:authorize="hasRole('ADMIN')" th:href="@{/admin/listar}">Listar</a></li>
+          <li><a href="/logout">Logout!</a></li>
+        </ul>
+      </li>
+      <li><a th:if="${(session.usuariosession == null && #request.requestURI.startsWith('/login')) || (session.usuariosession == null && #request.requestURI.equals('/'))}"  href="/registrar">Registrate</a>
+      </li>
+      <li><a th:if="${(session.usuariosession == null && #request.requestURI.startsWith('/registrar')) || (session.usuariosession == null && #request.requestURI.equals('/'))}" href="/login">Login</a>
+      </li>
+    </ul>
+  </nav>

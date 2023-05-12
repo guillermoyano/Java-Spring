@@ -1,0 +1,356 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+#fondito {
+    font-family: "Poppins", sans-serif;
+    background-color: #090909;
+    padding: 50px;
+}
+
+/* General styles end */
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+.navbar {
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1f2327;
+    padding-block: 15px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.logo {
+    margin-right: 50px;
+}
+
+.list {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+#toggler,
+.navbar label {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .menu {
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    .list {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .navbar label {
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    #toggler:checked~.menu {
+        max-height: 100%;
+    }
+}
+
+nav {
+    padding-top: 19px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    position: fixed;
+}
+
+a {
+    position: relative;
+    text-decoration: none;
+    color: #222;
+    font-size: 18px;
+    letter-spacing: .5px;
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+a:before,
+a:after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 0;
+    background: hsl(187 75% 64%);
+    transition: .5s;
+}
+
+a:after {
+    left: 0;
+    bottom: -10px;
+}
+
+a:before {
+    right: 0;
+    top: -10px;
+}
+
+a:hover:after,
+a:hover:before {
+    width: 100%;
+}
+
+#navbar {
+
+
+    backdrop-filter: blur(10px);
+}
+
+.button-89 {
+    --b: 3px;
+    /* border thickness */
+    --s: .45em;
+    /* size of the corner */
+    --color: hsl(187 75% 64%);
+
+    padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+    color: var(--color);
+    --_p: var(--s);
+    background:
+        conic-gradient(from 90deg at var(--b) var(--b), #0000 90deg, var(--color) 0) var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+    transition: .3s linear, color 0s, background-color 0s;
+    outline: var(--b) solid;
+    outline-offset: .6em;
+    font-size: 16px;
+
+    border: 0;
+
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-89:hover,
+.button-89:focus-visible {
+    --_p: 0px;
+    outline-color: var(--color);
+    outline-offset: .05em;
+}
+
+.button-89:active {
+    background: var(--color);
+    color:  hsl(187 75% 64%);
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    /*min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;*/
+    justify-content: center;
+    align-items: center;
+    background: hsl(187 40% 98%);
+    background-color: #1f2327;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+h2 {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+@media (min-width: 50em) {
+    h2 {
+        font-size: 1.8rem;
+    }
+}
+
+.cta {
+    --shadowColor: 187 60% 40%;
+    display: flex;
+    flex-wrap: wrap;
+    background: hsl(187 70% 85%);
+    max-width: 50rem;
+    width: 100%;
+    box-shadow: 0.65rem 0.65rem 0 hsl(var(--shadowColor) / 1);
+    border-radius: 0.8rem;
+    overflow: hidden;
+    border: 0.5rem solid;
+    align-content: stretch;
+}
+
+.cta img {
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    flex: 1 1 300px;
+    outline: 0.5rem solid;
+    text-align: justify;
+}
+
+.cta__text-column {
+    padding: min(2rem, 5vw) min(2rem, 5vw) min(2.5rem, 5vw);
+    flex: 1 0 50%;
+    text-align: justify;
+}
+
+.cta__text-column>*+* {
+    margin: min(1.5rem, 2.5vw) 0 0 0;
+    text-align: justify;
+}
+
+.cta a {
+    display: inline-block;
+    color: black;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    background: hsl(187 75% 64%);
+    border-radius: 0.6rem;
+    font-weight: 700;
+    border: 0.35rem solid;
+
+}
+
+.eliminacion {
+    display: inline-block;
+    color: black;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    background: hsl(187 75% 64%);
+    border-radius: 0.6rem;
+    font-weight: 700;
+    border: 0.35rem solid;
+
+}
+
+
+
+.card {
+    width: 330px;
+    height: 65px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+#todas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card .card-text {
+    text-align: center;
+    text-decoration: none;
+}
+
+.prueba {
+    border-radius: 60px;
+    background:  hsl(187 75% 64%);
+    box-shadow: 21px 21px 41px #a6a3a3,
+        -21px -21px 41px #ffffff;
+}
+
+.mb-3{
+    border: 10px;
+    border-color: antiquewhite;
+    border-radius: 10;
+}
+
+
+
+/*
+
+
+.input {
+    border-radius: 10px;
+    outline: 2px solid #FEBF00;
+    border: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #45badd;
+    outline-offset: 3px;
+    padding: 10px 1rem;
+    transition: 0.25s;
+    width: 900px;
+    text-align: center;
+  }
+  
+  */
+
+  .cuerpito {
+    border-radius: 10px;
+    outline: 2px solid hsl(187 75% 64%);
+    border: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color:  hsl(187 70% 85%);
+    outline-offset: 3px;
+    padding: 10px 1rem;
+    transition: 0.25s;
+    width: 900px;
+    height: 700px;
+    text-align: center;
+    
+  }
+  
+  .cuerpito1 {
+    border-radius: 10px;
+    outline: 2px solid hsl(187 75% 64%);
+    border: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color:  hsl(187 70% 85%);
+    outline-offset: 3px;
+    padding: 10px 1rem;
+    transition: 0.25s;
+    width: 900px;
+    height: 100px;
+    text-align: center;
+    
+  }
+
+  .cuerpito2 {
+    color: black;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border-radius: 10px;
+    outline: 2px solid hsl(187 75% 64%);
+    border: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color:   hsl(187 70% 85%);
+    outline-offset: 3px;
+    padding: 10px 1rem;
+    transition: 0.25s;
+    width: 900px;
+    height: 70px;
+    text-align: center;
+    
+  }

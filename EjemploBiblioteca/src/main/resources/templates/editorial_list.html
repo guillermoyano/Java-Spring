@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editorial Ver</title>
+    <link rel="icon" href="/img/Egg.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/final.css">
+    <link rel="stylesheet" href="/css/formulario.css">
+</head>
+
+<body>
+
+    <nav th:replace="/fragments/navbar2 :: nav"> </nav>
+
+    <h2>Listado de editoriales</h2>
+    <div class="table-wrapper">
+        <table class="fl-table">
+            <thead>
+                <tr>
+                    <th>Id de la editorial</th>
+                    <th>Nombre de la editorial</th>
+                    <th sec:authorize="hasRole('ADMIN')">Acciones</th>
+                    <th sec:authorize="hasRole('ADMIN')">Acciones</th>
+                </tr>
+            </thead>
+            <tbody th:each="editorial : ${editoriales}">
+                <tr>
+                    <td th:text="${editorial.id}"></td>
+                    <td th:text="${editorial.nombre}"></td>
+                    <td><a sec:authorize="hasRole('ADMIN')"
+                            th:href="@{/editorial/modificar/__${editorial.id}__}">Modificar</a></td>
+                    <td><a sec:authorize="hasRole('ADMIN')"
+                            th:href="@{/editorial/eliminar/__${editorial.id}__}">Eliminar</a></td>
+                </tr>
+
+            <tbody>
+        </table>
+
+        <div th:if="${exito}!=null" class="card text-white bg-success mb-3 mt-3 mensajeExito">
+            <div class="card-body">
+                <h5 class="card-title">Exito! <br> La editorial se cargó correctamente</h5>
+                <p class="card-text" th:text="${exito}"></p>
+            </div>
+        </div>
+        <div th:if="${error}!=null" class="card text-white bg-danger mb-3 mensajeError">
+            <div class="card-body">
+                <h5 class="card-title">Error 👎 <br> No se pudo cargar la editorial</h5>
+                <p class="card-text" th:text="${error}"></p>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
